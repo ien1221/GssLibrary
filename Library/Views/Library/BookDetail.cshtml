@@ -1,0 +1,75 @@
+﻿<div class="form-horizontal">
+    <h2 id="mode"></h2>
+    <hr />
+    <div id="validate">
+        <div class="form-group">
+            <label class="control-label col-md-2">書名</label>
+            <div class="col-md-10">
+                <textarea type="text" name="bookName" id="book_name" style="width: 280px;"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">作者</label>
+            <div class="col-md-10">
+                <input type="text" name="bookAuthor" id="book_author" class="k-textbox" maxlength="25" placeholder="最大上限25字" style="width: 280px;"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">出版商</label>
+            <div class="col-md-10">
+                <input type="text" name="bookPublisher" id="book_publisher" class="k-textbox" maxlength="15" placeholder="最大上限15字" style="width: 280px;"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">內容簡介</label>
+            <div class="col-md-10">
+                <textarea type="text" name="bookNote" id="book_note"style="width: 280px;"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">購書日期</label>
+            <div class="col-md-10">
+                <input type="text" name="boughtDate" id="bought_date" class="k-textbox" style="width: 280px;"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">圖書類別</label>
+            <div class="col-md-10">
+                <input type="text" name="bookCategory" id="book_category" class="k-textbox" style="width: 280px;"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">借閱狀態</label>
+            <div class="col-md-10">
+                <input type="text" name="bookStatus" id="book_status" class="k-textbox" style="width: 280px;"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">借閱人</label>
+            <div class="col-md-10">
+                <input type="text" name="bookKeeper" id="book_keeper" class="k-textbox" style="width: 280px;"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" id="submit" value="儲存" class="btn btn-primary" />
+                <input type="submit" id="edit" value="編輯" class="btn btn-primary" />
+                <a class="btnDelete btn btn-default" id="delete">刪除</a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div>
+    <button class = "btn btn-default" id="back">回到查詢頁面</button>
+</div>
+
+<script src="~/Scripts/js/BookDetail.js"></script>

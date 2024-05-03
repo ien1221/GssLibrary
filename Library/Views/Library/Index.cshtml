@@ -1,0 +1,110 @@
+﻿@* 搜尋畫面 *@
+<div class="form-horizontal">
+    <h2>圖書查詢</h2>
+    <hr />
+    <div class="form-group">
+        <label class="control-label col-md-2">書名</label>
+        <div class="col-md-10">
+            <input type="text" name="bookName" id="book_name" class="k-textbox" style="width: 250px;"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">圖書類別</label>
+        <div class="col-md-10">
+            <input type="text" name="bookCategory" id="book_category" class="k-textbox category" style="width: 250px;"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">借閱人</label>
+        <div class="col-md-10">
+            <input type="text" name="bookKeeper" id="book_keeper" class="k-textbox" style="width: 250px;"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">借閱狀態</label>
+        <div class="col-md-10">
+            <input type="text" name="bookStatus" id="book_status" class="k-textbox" style="width: 250px;"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" id="submit" value="查詢" class="btn btn-primary" />
+            <input type="submit" id="clear" value="清除" class="btn btn-default" />
+            <input type="submit" id="create" value="新增" class="btn btn-default" />
+        </div>
+    </div>
+
+    <div>
+        <div id="search_grid"></div>
+    </div>
+</div>
+
+@* 新增畫面 *@
+<div id="create_window" class="form-horizontal">
+    <div id="validate" class="validator-msg">
+        <div class="form-group">
+            <label class="control-label col-md-2">書名</label>
+            <div class="col-md-offset-3">
+                <textarea type="text" name="bookName" id="create_name" style="width: 80%;"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">作者</label>
+            <div class="col-md-offset-3">
+            <input type="text" name="bookAutohr" id="create_author" class="k-textbox" maxlength="25" placeholder="最大上限25字" style="width: 80%; " />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">出版商</label>
+            <div class="col-md-offset-3">
+            <input type="text" name="bookPublisher" id="create_publisher" class="k-textbox" maxlength="15" placeholder="最大上限15字" style="width: 80%;" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">內容簡介</label>
+            <div class="col-md-offset-3">
+            <textarea type="text" name="bookNote" id="create_note" class="k-textarea" style="width: 80%;"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">購書日期</label>
+            <div class="col-md-offset-3">
+            <input type="text" name="boughtDate" id="create_bought_date" class="k-textbox" style="width: 80%;" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">圖書類別</label>
+            <div class="col-md-offset-3">
+            <input type="text" name="bookCategory" id="create_category" class="k-textbox category" style="width: 80%;" />
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" id="create_submit" value="儲存" class="btn btn-primary" />
+        <input type="submit" id="create_clear" value="清除" class="btn btn-default" />
+        <label id="previous_id" hidden></label>
+        <button class="btn btn-default" id="previous_info" hidden>查看上一筆資訊</button>
+    </div>
+</div>
+
+@* 借閱紀錄畫面 *@
+<div id="lend_record_window">
+    <input id="book_id" value="" hidden/>
+    <div>
+        <div id="lend_record_grid"></div>
+    </div>
+</div>
+
+<script src="~/Scripts/js/LendRecordWindow.js"></script>
+<script src="~/Scripts/js/Index.js"></script>
+<script src="~/Scripts/js/CreateWindow.js"></script>

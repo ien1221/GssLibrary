@@ -1,0 +1,11 @@
+{
+    "cx.server": {
+        "url": "http://172.16.7.54/",
+        "alias": "checkmarx",
+        "username": "",
+        "password": "",
+        "project_id": 0,
+        "team_id": 0,
+        "project_name": ""
+    }
+}

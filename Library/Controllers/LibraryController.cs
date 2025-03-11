@@ -124,7 +124,8 @@ namespace Library.Controllers
         {
             var result = new
             {
-                lendRecord = bookService.GetLendRecord(bookId),
+                //lendRecord = bookService.GetLendRecord(bookId),
+                lendRecord = bookService.GetLendRecord_SQL(bookId),
                 bookName = bookService.GetBookById(bookId).BookName
             };
             return Json(result);

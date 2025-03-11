@@ -239,6 +239,48 @@ namespace Library.Models
             }
             return result;
         }
+        /// <summary>
+        /// Read-查詢該書籍借閱紀錄(BOOK_LEND_RECORD)
+        /// </summary>
+        /// <param name="id">Book ID</param>
+        /// <returns></returns>
+        public List<LendRecordArg> GetLendRecord_SQL(int id)
+        {
+            DataTable dt = new DataTable();
+            string sql = @"SELECT 
+	                           CONVERT(VARCHAR, blr.LEND_DATE, 111) AS LendDate,
+	                           mm.[USER_ID] AS UserId,
+	                           mm.USER_ENAME AS EName,
+	                           mm.USER_CNAME AS CName,
+	                           blr.BOOK_ID
+                           FROM BOOK_LEND_RECORD blr
+                           LEFT JOIN MEMBER_M mm
+	                           ON blr.KEEPER_ID = mm.[USER_ID]
+                           JOIN BOOK_DATA bd
+	                           ON blr.BOOK_ID = bd.BOOK_ID
+                           WHERE blr.BOOK_ID = " + id +  "ORDER BY LendDate DESC;";
+            using (SqlConnection conn = new SqlConnection(this.GetDBConnectionString()))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(cmd);
+                sqlAdapter.Fill(dt);
+                conn.Close();
+            }
+            List<LendRecordArg> result = new List<LendRecordArg>();
+            foreach (DataRow row in dt.Rows)
+            {
+                LendRecordArg lendRecord = new LendRecordArg()
+                {
+                    LendDate = row["LendDate"].ToString(),
+                    UserId = row["UserId"].ToString(),
+                    EName = row["EName"].ToString(),
+                    CName = row["CName"].ToString()
+                };
+                result.Add(lendRecord);
+            }
+            return result;
+        }
 
         /// <summary>
         /// Create-新增書籍(BOOK_DATA)
